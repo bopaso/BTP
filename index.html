@@ -350,12 +350,11 @@ summary::-webkit-details-marker{display:none}
 <h2 style="margin: 0; font-family: 'Poppins', system-ui, sans-serif; letter-spacing: -0.02em; font-size: clamp(2rem, 3.6vw, 2.75rem); font-weight: 700; line-height: 1.14;">¿Qué decisión de personas tienes por delante?</h2>
 <p style="margin: 0; font-size: 18px; line-height: 28px; color: #B8BCC6">Cuéntame en qué etapa está tu empresa. Empieza con una decisión, no con un contrato: partimos por una Sesión Estratégica Founder.</p>
 <div style="display: flex; flex-direction: column; gap: 10px; font-size: 16px">
-<a href="#contacto" style="color: #5CD6FF">[correo de contacto]</a>
-<a href="#contacto" style="color: #5CD6FF">[perfil de LinkedIn]</a>
-<span style="color: #B8BCC6">[teléfono o WhatsApp]</span>
+<a href="mailto:bopaso@gmail.com" style="color: #5CD6FF">bopaso@gmail.com</a>
+<a href="https://www.linkedin.com/in/barbaraopaso/" target="_blank" rel="noopener" style="color: #5CD6FF">LinkedIn: Bárbara Opaso</a>
 </div>
 </div>
-<form style="flex: 1 1 460px; display: flex; flex-direction: column; gap: 20px; padding: 32px; background: #FFFFFF; color: #0A0A0A; border-radius: 24px">
+<form id="form-contacto" action="mailto:bopaso@gmail.com" method="post" style="flex: 1 1 460px; display: flex; flex-direction: column; gap: 20px; padding: 32px; background: #FFFFFF; color: #0A0A0A; border-radius: 24px">
 <div style="display: flex; flex-direction: column; gap: 8px">
 <label for="o-nombre" style="font-size: 14px; font-weight: 600">Nombre</label>
 <input id="o-nombre" type="text" placeholder="Tu nombre" style="min-height: 48px; padding: 0 16px; border: 1px solid #7D8494; border-radius: 8px; background: #FFFFFF; font-family: 'Poppins', system-ui, sans-serif; font-size: 16px; color: #0A0A0A"/>
@@ -379,7 +378,8 @@ summary::-webkit-details-marker{display:none}
 <label for="o-decision" style="font-size: 14px; font-weight: 600">La decisión que tienes por delante</label>
 <textarea id="o-decision" rows="4" placeholder="Por ejemplo: contratar a mi primer gerente, ordenar roles, preparar al equipo para una ronda…" style="padding: 14px 16px; border: 1px solid #7D8494; border-radius: 8px; background: #FFFFFF; font-family: 'Poppins', system-ui, sans-serif; font-size: 16px; line-height: 1.5; color: #0A0A0A; resize: vertical"></textarea>
 </div>
-<button type="button" style="min-height: 52px; border: none; border-radius: 999px; background: #6D3BFF; color: #FFFFFF; font-family: 'Poppins', system-ui, sans-serif; font-size: 17px; font-weight: 600; cursor: pointer">Enviar</button>
+<button type="submit" style="min-height: 52px; border: none; border-radius: 999px; background: #6D3BFF; color: #FFFFFF; font-family: 'Poppins', system-ui, sans-serif; font-size: 17px; font-weight: 600; cursor: pointer">Escribir correo</button>
+<p style="margin: 0; font-size: 13px; line-height: 20px; color: #5A6170">Se abrirá tu correo con el mensaje listo para enviar.</p>
 </form>
 </div>
 </section>
@@ -394,5 +394,18 @@ summary::-webkit-details-marker{display:none}
 </div>
 </footer>
 </div>
+<script>
+(function(){
+  var f=document.getElementById('form-contacto'); if(!f) return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
+    var nombre=v('o-nombre'), empresa=v('o-empresa'), tam=v('o-tamano'), dec=v('o-decision');
+    var asunto='Conversemos'+(empresa?' — '+empresa:'');
+    var cuerpo='Hola Bárbara:\n\n'+(dec||'')+'\n\nNombre: '+nombre+'\nEmpresa: '+empresa+'\nTamaño del equipo: '+tam+'\n';
+    window.location.href='mailto:bopaso@gmail.com?subject='+encodeURIComponent(asunto)+'&body='+encodeURIComponent(cuerpo);
+  });
+})();
+</script>
 </body>
 </html>
