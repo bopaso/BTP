@@ -36,9 +36,9 @@ summary::-webkit-details-marker{display:none}
 </div>
 </header>
 
-<section id="inicio" style="background: #F2F4F7; color: #0A0A0A">
+<section id="inicio" style="position: relative; overflow: hidden; background: #F2F4F7; color: #0A0A0A">
 <div style="max-width: 1360px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: stretch">
-<div style="flex: 1 1 440px; display: flex; flex-direction: column; justify-content: center; gap: 28px; padding: 88px 40px 88px 32px">
+<div style="flex: 1 1 440px; position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: center; gap: 28px; padding: 88px 40px 88px 32px">
 <p style="margin: 0; font-size: 12px; line-height: 16px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6D3BFF">Business &amp; people strategy</p>
 <h1 style="margin: 0; font-family: 'Poppins', system-ui, sans-serif; letter-spacing: -0.02em; font-size: clamp(2.6rem, 5.4vw, 4.75rem); font-weight: 700; line-height: 1.04">Personas<br>que <span style="color: #6D3BFF">impulsan</span><br>personas.</h1>
 <p style="margin: 0; max-width: 560px; font-size: 20px; line-height: 30px; font-weight: 500; color: #0A0A0A">Acompaño a founders y empresas en crecimiento que quieran ir más allá.</p>
@@ -47,18 +47,15 @@ summary::-webkit-details-marker{display:none}
 <a href="#contacto" style="display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding-bottom: 2px; border-bottom: 2px solid #0A0A0A; color: #0A0A0A; font-size: 17px; font-weight: 600; text-decoration: none">Hablemos <svg aria-hidden="true" viewBox="0 0 24 24" style="width: 20px; height: 20px"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
 </div>
 </div>
-<div style="flex: 1 1 380px; position: relative; overflow: hidden; min-height: 560px; background: #0A0A0A">
-<svg aria-hidden="true" viewBox="0 0 600 640" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%">
-<circle cx="380" cy="300" r="150" fill="none" stroke="#8C66FF" stroke-width="10"></circle>
-<circle cx="380" cy="300" r="250" fill="none" stroke="#8C66FF" stroke-width="10"></circle>
-<circle cx="380" cy="300" r="56" fill="#F2F4F7"></circle>
-<circle cx="203" cy="123" r="30" fill="#5CD6FF"></circle>
+<div aria-hidden="true" style="flex: 1 1 380px; position: relative; min-height: clamp(300px, 46vw, 560px)">
+<svg viewBox="0 0 760 760" style="position: absolute; left: 0; top: 50%; width: clamp(380px, 54vw, 760px); height: clamp(380px, 54vw, 760px); transform: translateY(-50%); pointer-events: none">
+<circle cx="380" cy="380" r="340" fill="none" stroke="#8C66FF" stroke-width="2"></circle>
+<circle cx="380" cy="380" r="230" fill="none" stroke="#6D3BFF" stroke-width="3"></circle>
+<circle cx="380" cy="380" r="120" fill="none" stroke="#6D3BFF" stroke-width="3"></circle>
+<circle cx="380" cy="380" r="44" fill="#0A0A0A"></circle>
+<circle cx="217" cy="217" r="18" fill="#6D3BFF"></circle>
+<circle cx="620" cy="140" r="12" fill="#0A0A0A"></circle>
 </svg>
-<div style="position: absolute; left: 40px; bottom: 40px; display: flex; flex-wrap: wrap; gap: 8px">
-<span style="padding: 6px 14px; border-radius: 999px; border: 1px solid #2E3138; color: #B8BCC6; font-size: 13px; font-weight: 600">Founder</span>
-<span style="padding: 6px 14px; border-radius: 999px; border: 1px solid #2E3138; color: #B8BCC6; font-size: 13px; font-weight: 600">Personas</span>
-<span style="padding: 6px 14px; border-radius: 999px; background: #5CD6FF; color: #0A0A0A; font-size: 13px; font-weight: 700">Ir más allá</span>
-</div>
 </div>
 </div>
 </section>
@@ -351,15 +348,15 @@ summary::-webkit-details-marker{display:none}
 <a href="https://www.linkedin.com/in/barbaraopaso/" target="_blank" rel="noopener" style="color: #5CD6FF">LinkedIn: Bárbara Opaso</a>
 </div>
 </div>
-<form id="form-contacto" action="mailto:bopaso@gmail.com" method="post" style="flex: 1 1 460px; display: flex; flex-direction: column; gap: 20px; padding: 32px; background: #FFFFFF; color: #0A0A0A; border-radius: 24px">
+<form id="form-contacto" action="mailto:bopaso@gmail.com" method="post" style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 20px; padding: 32px; background: #FFFFFF; color: #0A0A0A; border-radius: 24px">
 <div style="display: flex; flex-direction: column; gap: 8px">
 <label for="o-nombre" style="font-size: 14px; font-weight: 600">Nombre</label>
-<input id="o-nombre" type="text" placeholder="Tu nombre" style="min-height: 48px; padding: 0 16px; border: 1px solid #7D8494; border-radius: 8px; background: #FFFFFF; font-family: 'Poppins', system-ui, sans-serif; font-size: 16px; color: #0A0A0A"/>
+<input id="o-nombre" type="text" placeholder="Tu nombre" style="min-height: 48px; padding: 0 16px; border: 1px solid #7D8494; border-radius: 8px; background: #FFFFFF; font-family: 'Poppins', system-ui, sans-serif; font-size: 16px; color: #0A0A0A; width: 100%; box-sizing: border-box"/>
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 16px">
 <div style="flex: 1 1 180px; display: flex; flex-direction: column; gap: 8px">
 <label for="o-empresa" style="font-size: 14px; font-weight: 600">Empresa</label>
-<input id="o-empresa" type="text" placeholder="Nombre de la empresa" style="min-height: 48px; padding: 0 16px; border: 1px solid #7D8494; border-radius: 8px; background: #FFFFFF; font-family: 'Poppins', system-ui, sans-serif; font-size: 16px; color: #0A0A0A"/>
+<input id="o-empresa" type="text" placeholder="Nombre de la empresa" style="min-height: 48px; padding: 0 16px; border: 1px solid #7D8494; border-radius: 8px; background: #FFFFFF; font-family: 'Poppins', system-ui, sans-serif; font-size: 16px; color: #0A0A0A; width: 100%; box-sizing: border-box"/>
 </div>
 <div style="flex: 1 1 180px; display: flex; flex-direction: column; gap: 8px">
 <label for="o-tamano" style="font-size: 14px; font-weight: 600">Tamaño del equipo</label>
